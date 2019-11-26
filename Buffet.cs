@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace hungry_ninja
 {
     public class Buffet
     {
-        public List<Food> Menu;
+        public List<IConsumable> Menu;
         //constructor
         public Buffet()
         {
-            Menu = new List<Food>()
+            Menu = new List<IConsumable>()
             {
                 new Food("Pizza", 150, false, false),
                 new Food("Cajun fried chicken", 20, true, false),
@@ -18,10 +19,13 @@ namespace hungry_ninja
                 new Food("Mashed potatoes", 400, false, false),
                 new Food("Pad thai", 450, true, false),
                 new Food("Sweet and sour chicken", 150, false, true),
-            };
+                new Drink("Coke", 150, false, true),
+                new Drink("Beer", 250, false, false),
+                new Drink("Orange Juice", 150, false, false),
+            }; 
         }
         
-        public Food Serve()
+        public IConsumable Serve()
         {
             Random rand = new Random();
             int randIdx = rand.Next(Menu.Count);
