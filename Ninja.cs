@@ -33,7 +33,7 @@ namespace hungry_ninja
                 }
                 else
                 {
-                return false;
+                    return false;
                 }
             }
         }
